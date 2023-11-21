@@ -2,22 +2,16 @@ function makeid(l) {
   // write your code here
 	// const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
-	let str="";
-	for(let i=0;i<l;i++){
-		
-		str+= String.fromCharCode(generateRandomNum());
-	}
-	return str;
-	
-}
-function generateRandomNum() {
-	const randomIndex =parseInt(Math.random() * 100);
-		if(randomIndex<47){
-			randomIndex+=47;
-			return randomIndex;
-		}
-}
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let result = '';
 
+  for (let i = 0; i < l; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    result += characters.charAt(randomIndex);
+  }
+
+  return result;
+}
 
 
 // Do not change the code below.
